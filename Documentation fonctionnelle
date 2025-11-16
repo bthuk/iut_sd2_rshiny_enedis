@@ -2,7 +2,7 @@
 title: "Documentation fonctionnelle - Application Shiny DPE"
 author: "Meryem Chouki, Ulrick Berthon, Sharon Guedj"
 date: "2025-11-15"
-output:
+output: 
   html_document:
     toc: true
     toc_depth: 2
