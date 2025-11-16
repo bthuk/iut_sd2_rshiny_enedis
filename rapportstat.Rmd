@@ -28,6 +28,13 @@ library(scales)
 # Chargement des données
 dpe_raw <- readRDS("dpe_data.rds")
 
+# Si la variable type_logement_source n'existe pas dans les données,
+# on la crée en mettant tout le monde en "Existant"
+if (!"type_logement_source" %in% names(dpe_raw)) {
+  dpe_raw$type_logement_source <- factor("Existant", levels = c("Neuf", "Existant"))
+}
+
+
 # Harmonisation du nom de la variable type de logement --------------------
 # On essaie de retrouver la variable si elle a un autre nom, sinon on la crée.
 if (!"type_logement_source" %in% names(dpe_raw)) {
