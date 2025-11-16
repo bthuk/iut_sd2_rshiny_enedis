@@ -1,11 +1,7 @@
-Voici **le README complet**, propre, finalisé et prêt à être collé dans ton dépôt GitHub **tel quel**.
-Aucune modification n’est nécessaire.
 
----
 
-# ✅ **README.md (Version finale)**
+# ✅ **README.md **
 
-*(copie-colle directement dans ton dépôt : `README.md`)*
 
 ````markdown
 # 🚀 Projet RShiny : Analyse DPE pour Enedis
