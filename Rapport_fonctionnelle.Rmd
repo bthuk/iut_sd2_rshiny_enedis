@@ -1,7 +1,7 @@
 ---
-title: "Documentation fonctionnelle – Application Shiny DPE"
+title: "Documentation fonctionnelle - Application Shiny DPE"
 author: "Meryem Chouki, Ulrick Berthon, Sharon Guedj"
-date: "15 novembre 2025"
+date: "2025-11-15"
 output:
   html_document:
     toc: true
@@ -12,104 +12,90 @@ output:
 
 # Contexte de l'étude
 
-L'application **« Analyse DPE – Occitanie »** a été développée dans le cadre d’un projet universitaire pour explorer les données de performance énergétique des logements dans la région Occitanie.
+L'application "Analyse DPE - Occitanie" a été développée dans le cadre d'un projet universitaire pour explorer les données de performance énergétique des logements dans la région Occitanie.
 
 Les objectifs principaux sont :
 
-- Identifier les **logements les plus énergivores**.  
-- Comprendre la **répartition des classes DPE et GES**.  
-- Permettre une **analyse interactive** des données par :
-  - code postal,  
-  - type de logement,  
-  - type de bâtiment,  
-  - étiquette DPE.  
-- Faciliter la **visualisation** et l’**export** des informations clés pour la prise de décision.
+- Identifier les logements les plus énergivores.
+- Comprendre la répartition des classes DPE et GES.
+- Permettre une analyse interactive des données par :
+  - code postal,
+  - type de logement,
+  - type de bâtiment,
+  - étiquette DPE.
+- Faciliter la visualisation et l'export des informations clés pour la prise de décision.
 
 ---
 
-# Présentation générale de l'application Shiny
+# Présentation de l'application Shiny
 
-L'application est organisée en **plusieurs pages (onglets)**, chacune ayant un rôle spécifique dans l’analyse des données.
+L'application est organisée en plusieurs pages (onglets), chacune ayant un rôle spécifique dans l'analyse des données.
 
-## 1. Page « Tableau de bord »
+## 1. Tableau de bord
 
-Cette page fournit une **vue synthétique** des logements sélectionnés via différents indicateurs (KPI) :
+Cette page permet d'obtenir une vue synthétique des logements sélectionnés via plusieurs indicateurs ("KPI") :
 
-- **Nombre de logements** : total des logements correspondant aux filtres appliqués.  
-- **Consommation énergétique moyenne** (kWhep/m²/an).  
-- **Émissions de GES moyennes** (kgCO₂/m²).  
-- **Surface habitable moyenne** (m²).  
+- Nombre total de logements filtrés.
+- Consommation énergétique moyenne (kWhep/m²/an).
+- Émissions de GES moyennes (kgCO2/m²/an).
+- Surface habitable moyenne (m²).
 
-Elle contient également des **graphes de synthèse** :
+Elle inclut également plusieurs graphiques essentiels :
 
-- **Histogramme de la consommation énergétique** (distribution des consommations par m²).  
-- **Boîte à moustaches par classe DPE**, permettant de comparer les consommations selon l’étiquette.  
-- **Diagramme de répartition des classes DPE**, pour visualiser le poids de chaque classe dans le parc étudié.
+- Histogramme de la consommation énergétique.
+- Boîte à moustaches par classe DPE.
+- Diagramme de répartition des classes DPE.
 
-Cette page est destinée à fournir **un aperçu global et rapide** de la situation énergétique des logements filtrés.
-
----
-
-## 2. Page « Graphiques »
-
-Cette page propose des visualisations plus détaillées pour explorer les **relations entre variables** :
-
-- **Nuage de points** :  
-  - Axe X : surface habitable  
-  - Axe Y : consommation énergétique  
-  - Couleur des points : étiquette DPE  
-
-  Ce graphique permet de comprendre comment la consommation totale évolue avec la surface, en distinguant les classes DPE.
-
-- **Histogramme des émissions de GES** :  
-  - Permet d’observer la distribution des émissions de gaz à effet de serre (kgCO₂/m²).  
-
-Grâce à ces graphiques, l’utilisateur peut analyser plus finement :
-
-- les **distributions** des variables clés,  
-- les **corrélations** entre surface, consommation et performance énergétique.
+Cette page sert de tableau de bord général, permettant une première lecture globale des données.
 
 ---
 
-## 3. Page « Tableau »
+## 2. Graphiques
 
-La page **Tableau** présente les données filtrées sous forme de **tableau interactif** :
+Cette page présente des visualisations détaillées permettant d'explorer les relations entre les variables :
+
+- **Nuage de points** : Surface habitable vs consommation énergétique, coloré par classe DPE.
+- **Histogramme des émissions de GES** : permet d'observer la distribution des émissions dans le parc étudié.
+
+Cette page aide l'utilisateur à analyser :
+
+- les distributions,
+- les corrélations,
+- les comportements énergétiques en fonction de la surface, du DPE ou du type de logement.
+
+---
+
+## 3. Tableau
+
+La page *Tableau* présente les données filtrées sous forme de tableau interactif.
 
 Fonctionnalités :
 
-- **Tri** par colonne (croissant / décroissant).  
-- **Recherche** textuelle instantanée.  
-- **Filtrage** possible via les filtres de l’interface.  
-- **Export** des données :
-  - au format **CSV**,  
-  - au format **Excel**,  
-  - ou **copie** des lignes sélectionnées dans le presse-papier.
+- Tri par colonne.
+- Recherche par mots-clés.
+- Défilement horizontal/vertical.
+- Export des données :
+  - CSV,
+  - Excel,
+  - copie vers le presse-papier.
 
-Cette page permet :
-
-- d’examiner chaque logement **individuellement**,  
-- de visualiser **toutes ses caractéristiques** (surface, consommation, DPE, GES, code postal, etc.),  
-- de préparer des **exports de données** pour des analyses complémentaires.
+Cette page permet d'inspecter chaque logement individuellement avec toutes ses caractéristiques.
 
 ---
 
-## 4. Page « Carte »
+## 4. Carte
 
-La page **Carte** propose une **visualisation géographique** des logements :
+La page *Carte* permet une visualisation géographique des logements :
 
-- Les logements sont représentés par des **points** géolocalisés sur la carte.  
-- La **couleur des points** correspond à l’**étiquette DPE**.  
-- Un **clic** sur un point ouvre un **popup** contenant des informations détaillées :
-  - commune,  
-  - consommation énergétique,  
-  - classe DPE,  
-  - éventuellement d’autres caractéristiques (surface, GES, etc.).
+- Localisation des logements sur une carte interactive.
+- Couleur des points en fonction de l'étiquette DPE.
+- Popups affichant des informations détaillées :
+  - commune,
+  - consommation énergétique,
+  - classe DPE,
+  - éventuellement surface et GES.
 
-Cette fonctionnalité permet :
-
-- d’identifier les **zones géographiques sensibles**,  
-- de repérer les secteurs où se concentrent les **logements énergivores**,  
-- d’aider à prioriser les actions de **rénovation énergétique**.
+Cette fonctionnalité est utile pour identifier les zones géographiques regroupant des logements énergivores ou nécessitant des priorités d'intervention.
 
 ---
 
@@ -117,101 +103,78 @@ Cette fonctionnalité permet :
 
 ## 1. Filtres dynamiques
 
-L’application intègre plusieurs **filtres interactifs** permettant à l’utilisateur de restreindre le périmètre d’analyse :
+Plusieurs filtres permettent à l'utilisateur de restreindre l'analyse :
 
-- **Type de bâtiment** : appartement, maison, etc.  
-- **Code postal** : filtrer par territoire / commune.  
-- **Surface habitable** : sélection par plage de surface (petits vs grands logements).  
-- **Classe DPE / étiquette DPE** : A à G.  
+- Type de bâtiment (appartement, maison, etc.).
+- Code postal.
+- Surface habitable (via slider).
+- Classe DPE.
 
-Les filtres sont appliqués **en temps réel** à l’ensemble des onglets (graphes, tableau, carte).
+Les filtres s'appliquent simultanément à toutes les pages (graphes, tableau, carte).
 
 ---
 
 ## 2. Graphiques interactifs
 
-Les graphiques de l’application offrent :
+Les principaux graphiques proposés sont :
 
-- Des **histogrammes**,  
-- Des **boîtes à moustaches**,  
-- Des **diagrammes de répartition**,  
-- Des **nuages de points**.
+- histogrammes,
+- boîtes à moustaches,
+- diagrammes de répartition,
+- nuages de points.
 
-Selon la conception, certains graphiques peuvent être :
+Ils permettent :
 
-- **zoomables**,  
-- **dynamiques** (affichage de valeurs au survol),  
-- **exportables** (par exemple en PNG).
+- d’identifier les distributions de consommation et de GES,
+- de comparer les classes DPE,
+- de repérer les comportements énergétiques anormaux.
 
-Ils permettent de répondre rapidement à des questions comme :
-
-- “Quelles classes DPE sont les plus représentées ?”  
-- “Les logements les plus grands sont-ils aussi les plus énergivores ?”  
-- “Comment se distribuent les émissions de GES ?”
+Plusieurs graphiques sont exportables au format PNG.
 
 ---
 
 ## 3. Tableaux interactifs
 
-Le tableau de données offre :
+Le tableau permet :
 
-- **Tri par colonne**,  
-- **Recherche textuelle**,  
-- **Filtrage via les contrôles de l’interface**,  
-- **Export des données** au format CSV / Excel.
+- un tri rapide des données,
+- la recherche instantanée,
+- l'export direct CSV/Excel.
 
-Cette fonctionnalité est particulièrement utile pour :
-
-- préparer des **exports pour Excel**,  
-- partager des **sous-ensembles de logements** avec d’autres acteurs,  
-- vérifier rapidement des valeurs individuelles.
+Il est adapté pour explorer facilement un grand volume de données et préparer des analyses complémentaires.
 
 ---
 
 ## 4. Cartographie
 
-La carte permet :
+La carte interactive repose sur le package `leaflet`.
 
-- une **visualisation géographique** intuitive,  
-- un repérage visuel des **zones problématiques**,  
-- une meilleure compréhension de la **dimension territoriale** de la performance énergétique.
+Elle permet :
 
-Options principales :
-
-- **Zoom** et **déplacement** sur la carte,  
-- **Légende** indiquant les couleurs par classe DPE,  
-- **Popups** pour chaque point cliquable.
+- une navigation fluide (zoom, déplacement),
+- une lecture intuitive des logements dans leur contexte géographique,
+- un repérage rapide des zones présentant des concentrations de logements énergivores.
 
 ---
 
-## 5. Mise à jour dynamique des données
+## 5. Mise à jour des données
 
-L’application propose un mécanisme de **rafraîchissement des données** (par exemple via un bouton « Rafraîchir » ou un rechargement automatique) :
+L'application inclut un mécanisme de rafraîchissement :
 
-- Rechargement du fichier `dpe_data.rds`,  
-- Mise à jour des graphes, cartes, tableaux et KPI.
+- les données sont rechargées depuis le fichier `dpe_data.rds`,
+- l'ensemble des pages se met à jour automatiquement.
 
-Cela garantit que :
-
-- l’application reste **synchronisée** avec la dernière version des données,  
-- les analyses sont **à jour** sans manipulation complexe côté utilisateur.
+Ce système garantit que l'utilisateur travaille toujours sur une version cohérente et actualisée des données.
 
 ---
 
 # Conclusion
 
-L'application **Analyse DPE – Occitanie** permet aux utilisateurs de :
+L'application Shiny "Analyse DPE - Occitanie" permet :
 
-- **Explorer facilement** un grand nombre de logements,  
-- **Identifier rapidement** les points critiques en matière de consommation énergétique et d’émissions de GES,  
-- Visualiser les informations selon plusieurs dimensions :
-  - statistique (graphes, KPI),  
-  - tabulaire (tableau interactif),  
-  - géographique (carte),  
-- **Exporter** les résultats pour des analyses complémentaires ou des comptes-rendus.
+- d'explorer des milliers de logements de manière intuitive,
+- d'identifier les points critiques concernant la consommation énergétique et les émissions de GES,
+- de visualiser les données à travers plusieurs angles : statistiques, tabulaires et géographiques,
+- d'exporter facilement les résultats pour une prise de décision éclairée.
 
-Elle constitue ainsi un **outil d’aide à la décision** pour :
-
-- les acteurs de la **transition énergétique**,  
-- les collectivités,  
-- et les gestionnaires de patrimoine immobilier souhaitant cibler les **logements énergivores** et prioriser les **actions de rénovation**.
+Elle constitue un outil robuste et complet pour accompagner les analyses énergétiques dans la région et guider les actions prioritaires.
