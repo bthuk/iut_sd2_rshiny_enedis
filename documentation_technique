@@ -1,0 +1,172 @@
+
+
+---
+
+#  Documentation Technique
+
+**Projet :** Dashboard DPE Enedis
+**Auteurs :** Meryem Chouki, Ulrick Berthon, Sharon Guedj
+**Date :** Octobre 2025
+
+---
+
+## 1. Packages R nécessaires
+
+Les packages suivants sont requis pour exécuter **l’application Shiny** ainsi que **le rapport statistique** :
+
+* `shiny`
+* `tidyverse`
+* `DT`
+* `leaflet`
+* `sf`
+* `bslib`
+* `plotly`
+* `corrplot`
+* `broom`
+* `janitor`
+* `glue`
+* `knitr`
+* `scales`
+
+Installation en une ligne :
+
+```r
+install.packages(c(
+  "shiny", "tidyverse", "DT", "leaflet", "sf", "bslib",
+  "plotly", "corrplot", "broom", "janitor", "glue",
+  "knitr", "scales"
+))
+```
+
+---
+
+## 2. Installation & Exécution en local
+
+### 2.1. Cloner le dépôt GitHub
+
+```bash
+git clone https://github.com/bthuk/iut_sd2_rshiny_enedis.git
+```
+
+### 2.2. Ouvrir l’application dans RStudio
+
+* Ouvrir **RStudio**
+* Charger le fichier :
+  `app.R`
+
+### 2.3. Lancer l’application
+
+Dans RStudio, cliquer sur :
+
+ **Run App**
+
+Au démarrage, l'application :
+
+1. télécharge automatiquement le fichier `dpe_data.rds` depuis GitHub,
+2. charge les données en mémoire,
+3. initialise l’interface (UI) et les visualisations.
+
+---
+
+## 3.  Architecture du projet
+
+Le projet repose sur une architecture Shiny simple : un fichier unique **`app.R`** contenant :
+
+* la **UI** (interface utilisateur),
+* le **server** (logique métier et traitements),
+* le **chargement des données** depuis GitHub.
+
+Aucun fichier `ui.R` ou `server.R` séparé.
+
+---
+
+## 4.  Flux des données
+
+### 4.1. Chargement dynamique depuis GitHub
+
+L’application ne nécessite **aucun fichier local**.
+Les données sont chargées dynamiquement via une fonction dédiée :
+
+```r
+load_data_from_github <- function() {
+  url <- "https://raw.githubusercontent.com/bthuk/iut_sd2_rshiny_enedis/main/dpe_data.rds"
+  temp <- tempfile(fileext = ".rds")
+  download.file(url, temp, mode = "wb")
+  readRDS(temp)
+}
+```
+
+
+
+---
+
+## 5.  Scripts de préparation des données
+
+Trois scripts ont été utilisés pour générer le fichier final `dpe_data.rds` :
+
+* `dpe_existants.R` : préparation des données des logements existants
+* `dpe_neuf.R` : préparation des logements neufs
+* `fusion_existant_neuf.R` : fusion, nettoyage et mise en cohérence
+
+Le fichier `dpe_data.rds` est ensuite utilisé :
+
+* dans l’application Shiny
+* dans le rapport statistique `rapportstat.Rmd`
+
+---
+
+## 6.  Génération du rapport statistique
+
+Le rapport est généré via le fichier :
+
+`rapportstat.Rmd`
+
+Il compile automatiquement en :
+
+`rapportstat.html`
+
+Lancer dans RStudio :
+
+```r
+rmarkdown::render("rapportstat.Rmd")
+```
+
+---
+
+## 7.  Déploiement sur shinyapps.io
+
+L’application est déployée en ligne :
+
+ [https://meryem124.shinyapps.io/projet_r/](https://meryem124.shinyapps.io/projet_r/)
+
+Le déploiement se fait via :
+
+```r
+rsconnect::deployApp()
+```
+
+*(Après avoir configuré `rsconnect::setAccountInfo()` une fois.)*
+
+---
+
+## 8.  Dépannage
+
+### L’application ne se lance pas ?
+
+* Vérifier l’installation des packages.
+* Vérifier que `app.R` s’ouvre correctement dans RStudio.
+* Vérifier que votre pare-feu ne bloque pas `download.file()`.
+* Tester la fonction de chargement des données séparément.
+
+---
+
+## 9. Support technique
+
+Pour toute question ou problème technique :
+📧 [meryem.chouki@etu.iut.fr](mailto:meryem.chouki@etu.iut.fr)
+📧 [ulrick.berthon@etu.iut.fr](mailto:ulrick.berthon@etu.iut.fr)
+📧 [sharon.guedj@etu.iut.fr](mailto:sharon.guedj@etu.iut.fr)
+
+---
+
+Si tu veux, je peux aussi te générer **la documentation fonctionnelle**, ou même **une version PDF prête à rendre**.
