@@ -1,6 +1,6 @@
 
 
-# 🚀 Projet RShiny : Analyse DPE pour Enedis
+# Projet RShiny : Analyse DPE pour Enedis
 
 **Auteurs :** Meryem Chouki, Ulrick Berthon, Sharon Guedj
 **Client :** Enedis (fictif)
@@ -8,7 +8,7 @@
 
 ---
 
-## 1. 🎯 Objectif du Projet
+## 1. Objectif du Projet
 
 Ce projet analyse l’impact du **Diagnostic de Performance Énergétique (DPE)** sur la **consommation énergétique des logements** dans le département 31.
 
@@ -19,9 +19,9 @@ Il s’appuie sur deux livrables principaux :
 
 ---
 
-## 2. 🔗 Accès aux Livrables
+## 2. Accès aux Livrables
 
-### 🖥️ Application Shiny
+### Application Shiny
 
 L'application est déployée en ligne sur shinyapps.io :
 
@@ -29,15 +29,15 @@ L'application est déployée en ligne sur shinyapps.io :
 
 ---
 
-### 📄 Rapport Statistique (HTML)
+### Rapport Statistique (HTML)
 
 Le rapport d’étude complet est disponible ici :
 
-👉 **[https://htmlpreview.github.io/?https://github.com/bthuk/iut_sd2_rshiny_enedis/blob/main/rapportstat.html](https://htmlpreview.github.io/?https://github.com/bthuk/iut_sd2_rshiny_enedis/blob/main/rapportstat.html)**
+**[https://htmlpreview.github.io/?https://github.com/bthuk/iut_sd2_rshiny_enedis/blob/main/rapportstat.html](https://htmlpreview.github.io/?https://github.com/bthuk/iut_sd2_rshiny_enedis/blob/main/rapportstat.html)**
 
 ---
 
-## 3. 📁 Contenu du Dépôt
+## 3. Contenu du Dépôt
 
 | Fichier / Dossier               | Description                                                      |
 | ------------------------------- | ---------------------------------------------------------------- |
@@ -52,7 +52,7 @@ Le rapport d’étude complet est disponible ici :
 
 ---
 
-## 4. ▶️ Lancer l'application en local
+## 4. Lancer l'application en local
 
 ### 4.1. Prérequis
 
@@ -77,7 +77,7 @@ L’application téléchargera automatiquement `dpe_data.rds` depuis GitHub.
 
 ---
 
-## 5. 📬 Contact
+## 5. Contact
 
 Pour toute question concernant ce projet :
 
