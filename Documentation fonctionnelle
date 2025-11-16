@@ -1,10 +1,17 @@
-Documentation fonctionnelle - Application Shiny DPE
-Auteurs : Meryem Chouki, Ulrick Berthon, Sharon Guedj
-Date : 2025-11-15
 
---------------------------------------------------
-1. Contexte de l'étude
---------------------------------------------------
+
+---
+title: "Documentation fonctionnelle - Application Shiny DPE"
+author: "Meryem Chouki, Ulrick Berthon, Sharon Guedj"
+date: "2025-11-15"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+# Contexte de l'étude
 
 L'application "Analyse DPE - Occitanie" a été développée dans le cadre d'un projet universitaire pour explorer les données de performance énergétique des logements dans la région Occitanie.
 
@@ -19,15 +26,11 @@ Les objectifs principaux sont :
   - étiquette DPE.
 - Faciliter la visualisation et l'export des informations clés pour la prise de décision.
 
---------------------------------------------------
-2. Présentation de l'application Shiny
---------------------------------------------------
+# Présentation de l'application Shiny
 
 L'application est organisée en plusieurs pages (onglets), chacune ayant un rôle spécifique dans l'analyse des données.
 
--------------------------
-2.1. Tableau de bord
--------------------------
+## 2.1. Tableau de bord
 
 Cette page permet d'obtenir une vue synthétique des logements sélectionnés via plusieurs indicateurs ("KPI") :
 
@@ -44,9 +47,7 @@ Elle inclut également plusieurs graphiques essentiels :
 
 Cette page sert de tableau de bord général, permettant une première lecture globale des données.
 
--------------------------
-2.2. Graphiques
--------------------------
+## 2.2. Graphiques
 
 Cette page présente des visualisations détaillées permettant d'explorer les relations entre les variables :
 
@@ -59,9 +60,7 @@ Cette page aide l'utilisateur à analyser :
 - les corrélations,
 - les comportements énergétiques en fonction de la surface, du DPE ou du type de logement.
 
--------------------------
-2.3. Tableau
--------------------------
+## 2.3. Tableau
 
 La page Tableau présente les données filtrées sous forme de tableau interactif.
 
@@ -74,9 +73,7 @@ Fonctionnalités :
 
 Cette page permet d'inspecter chaque logement individuellement avec toutes ses caractéristiques.
 
--------------------------
-2.4. Carte
--------------------------
+## 2.4. Carte
 
 La page Carte permet une visualisation géographique des logements :
 
@@ -86,13 +83,9 @@ La page Carte permet une visualisation géographique des logements :
 
 Cette fonctionnalité est utile pour identifier les zones géographiques regroupant des logements énergivores ou nécessitant des priorités d'intervention.
 
---------------------------------------------------
-3. Fonctionnalités majeures de l'application
---------------------------------------------------
+# Fonctionnalités majeures de l'application
 
--------------------------
-3.1. Filtres dynamiques
--------------------------
+## 3.1. Filtres dynamiques
 
 Plusieurs filtres permettent à l'utilisateur de restreindre l'analyse :
 
@@ -103,9 +96,7 @@ Plusieurs filtres permettent à l'utilisateur de restreindre l'analyse :
 
 Les filtres s'appliquent simultanément à toutes les pages (graphes, tableau, carte).
 
--------------------------
-3.2. Graphiques interactifs
--------------------------
+## 3.2. Graphiques interactifs
 
 Les principaux graphiques proposés sont :
 
@@ -122,9 +113,7 @@ Ils permettent :
 
 Plusieurs graphiques peuvent être exportés au format PNG.
 
--------------------------
-3.3. Tableaux interactifs
--------------------------
+## 3.3. Tableaux interactifs
 
 Le tableau permet :
 
@@ -134,9 +123,7 @@ Le tableau permet :
 
 Il est adapté pour explorer facilement un grand volume de données et préparer des analyses complémentaires.
 
--------------------------
-3.4. Cartographie
--------------------------
+## 3.4. Cartographie
 
 La carte interactive (basée sur leaflet) permet :
 
@@ -144,9 +131,7 @@ La carte interactive (basée sur leaflet) permet :
 - une lecture intuitive des logements dans leur contexte géographique,
 - un repérage rapide des zones présentant des concentrations de logements énergivores.
 
--------------------------
-3.5. Mise à jour des données
--------------------------
+## 3.5. Mise à jour des données
 
 L'application inclut un mécanisme de rafraîchissement :
 
@@ -155,9 +140,7 @@ L'application inclut un mécanisme de rafraîchissement :
 
 Ce système garantit que l'utilisateur travaille toujours sur une version cohérente et actualisée des données.
 
---------------------------------------------------
-4. Conclusion
---------------------------------------------------
+# Conclusion
 
 L'application Shiny "Analyse DPE - Occitanie" permet :
 
@@ -167,3 +150,5 @@ L'application Shiny "Analyse DPE - Occitanie" permet :
 - d'exporter facilement les résultats pour une prise de décision éclairée.
 
 Elle constitue un outil robuste et complet pour accompagner les analyses énergétiques et guider les actions prioritaires.
+
+---
