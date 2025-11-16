@@ -1,0 +1,121 @@
+---
+title: "Rapport d'étude"
+author: "Meryem Chouki Ulrick Berthlon Sharon Guedj"
+date: '2025-11-15'
+output:
+  html_document: default
+  word_document: default
+---
+
+# Contexte de l'étude
+
+L'application Analyse DPE - Occitanie a été développée pour explorer les données de performance énergétique des logements dans la région Occitanie.
+
+Les objectifs principaux sont :
+
+- Identifier les logements les plus énergivores.
+
+- Comprendre la répartition des classes DPE et GES.
+
+- Permettre une analyse interactive des données par code postal, type de logement, type de bâtiment et étiquette DPE.
+
+- Faciliter la visualisation et l’export des informations clés pour la prise de décision.
+
+# Présentation de l'application Shiny
+
+L'application est organisée en plusieurs pages principales, chacune ayant un rôle spécifique dans l’analyse des données.
+
+## 1. Tableau de bord
+
+Cette page permet d’obtenir une vue synthétique des logements sélectionnés via des KPI :
+
+- Nombre de logements : total des logements correspondant aux filtres appliqués.
+
+- Consommation énergétique moyenne (kWhep/m²/an).
+
+- Émissions de GES moyennes (kgCO₂/m²).
+
+- Surface habitable moyenne (m²).
+
+Elle contient également des graphiques principaux :
+
+- Histogramme de la consommation énergétique.
+
+- Boîte à moustaches par classe DPE.
+
+- Diagramme des répartitions des classes DPE.
+
+## 2. Graphiques
+
+Cette page propose des visualisations détaillées permettant d'explorer les relations entre variables :
+
+- Nuage de points : Surface vs consommation énergétique, coloré par DPE.
+
+- Histogramme des émissions de GES.
+
+Elle permet d’analyser plus finement les distributions et corrélations des variables clés.
+
+## 3. Tableau
+
+La page Tableau affiche les données filtrées dans un format interactif :
+
+- Tri et recherche intégrés.
+
+- Export possible au format CSV, Excel ou copie dans le presse-papier.
+
+- Permet d’examiner chaque logement individuellement avec toutes ses caractéristiques.
+
+## 4. Carte
+
+La page Carte propose une visualisation géographique des logements :
+
+- Points localisés sur la carte selon leurs coordonnées géographiques.
+
+- Couleur des points correspondant à l’étiquette DPE.
+
+- Possibilité d’afficher des informations détaillées via les popups : commune, consommation, DPE.
+
+Cette fonctionnalité est utile pour identifier des zones géographiques avec des logements énergivores.
+ 
+# Fonctionnalités majeures de l'application
+
+1. Filtres dynamiques :
+
+
+  - Type de bâtiment : appartement, maison, etc.
+
+  - Code postal.
+
+  - Surface habitable.
+
+
+2. Graphiques interactifs :
+
+  - Histograms, boîtes à moustaches, diagrammes, nuages de points.
+
+  - Possibilité d’exporter les graphiques en PNG.
+
+3. Tableaux interactifs :
+
+  - Tri, recherche, filtrage et export des données.
+
+4. Cartographie :
+
+  - Visualisation géographique interactive des logements.
+
+  - Légendes et popups pour détails par logement.
+
+5. Mise à jour dynamique :
+
+  Les données peuvent être rechargées à tout moment avec un simple clic sur le bouton Rafraîchir.
+
+# Conclusion
+
+L'application permet aux utilisateurs de :
+
+- Explorer facilement des milliers de logements.
+
+- Identifier rapidement les points critiques en matière de consommation énergétique et GES.
+
+- Générer des graphiques et tableaux exportables pour la prise de décision.
+
