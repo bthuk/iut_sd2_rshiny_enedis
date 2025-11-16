@@ -54,8 +54,8 @@ Cette page sert de tableau de bord général, permettant une première lecture g
 
 Cette page présente des visualisations détaillées permettant d'explorer les relations entre les variables :
 
-- **Nuage de points** : Surface habitable vs consommation énergétique, coloré par classe DPE.
-- **Histogramme des émissions de GES** : permet d'observer la distribution des émissions dans le parc étudié.
+- Nuage de points : Surface habitable vs consommation énergétique, coloré par classe DPE.
+- Histogramme des émissions de GES : permet d'observer la distribution des émissions dans le parc étudié.
 
 Cette page aide l'utilisateur à analyser :
 
@@ -67,17 +67,14 @@ Cette page aide l'utilisateur à analyser :
 
 ## 3. Tableau
 
-La page *Tableau* présente les données filtrées sous forme de tableau interactif.
+La page Tableau présente les données filtrées sous forme de tableau interactif.
 
 Fonctionnalités :
 
 - Tri par colonne.
 - Recherche par mots-clés.
 - Défilement horizontal/vertical.
-- Export des données :
-  - CSV,
-  - Excel,
-  - copie vers le presse-papier.
+- Export des données : CSV, Excel, copie vers le presse-papier.
 
 Cette page permet d'inspecter chaque logement individuellement avec toutes ses caractéristiques.
 
@@ -85,15 +82,11 @@ Cette page permet d'inspecter chaque logement individuellement avec toutes ses c
 
 ## 4. Carte
 
-La page *Carte* permet une visualisation géographique des logements :
+La page Carte permet une visualisation géographique des logements :
 
 - Localisation des logements sur une carte interactive.
 - Couleur des points en fonction de l'étiquette DPE.
-- Popups affichant des informations détaillées :
-  - commune,
-  - consommation énergétique,
-  - classe DPE,
-  - éventuellement surface et GES.
+- Popups affichant des informations détaillées : commune, consommation énergétique, classe DPE, surface, GES.
 
 Cette fonctionnalité est utile pour identifier les zones géographiques regroupant des logements énergivores ou nécessitant des priorités d'intervention.
 
@@ -147,7 +140,7 @@ Il est adapté pour explorer facilement un grand volume de données et préparer
 
 ## 4. Cartographie
 
-La carte interactive repose sur le package `leaflet`.
+La carte interactive repose sur le package leaflet.
 
 Elle permet :
 
@@ -161,7 +154,7 @@ Elle permet :
 
 L'application inclut un mécanisme de rafraîchissement :
 
-- les données sont rechargées depuis le fichier `dpe_data.rds`,
+- les données sont rechargées depuis le fichier dpe_data.rds,
 - l'ensemble des pages se met à jour automatiquement.
 
 Ce système garantit que l'utilisateur travaille toujours sur une version cohérente et actualisée des données.
@@ -177,4 +170,4 @@ L'application Shiny "Analyse DPE - Occitanie" permet :
 - de visualiser les données à travers plusieurs angles : statistiques, tabulaires et géographiques,
 - d'exporter facilement les résultats pour une prise de décision éclairée.
 
-Elle constitue un outil robuste et complet pour accompagner les analyses énergétiques dans la région et guider les actions prioritaires.
+Elle constitue un outil robuste et complet pour accompagner les analyses énergétiques et guider les actions prioritaires.
